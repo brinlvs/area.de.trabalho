@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f5f0e8;
+    color:#111;
+}
+
+header{
+    background-color:#111;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+header p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.6;
+}
+
+header a{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 25px;
+    background-color:#d6c2a1;
+    color:#111;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.sobre{
+    padding:60px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.sobre h2{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.sobre p{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.projetos{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:40px 20px 80px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    margin-bottom:20px;
+    color:#111;
+}
+
+.card ul{
+    list-style:none;
+}
+
+.card li{
+    margin-bottom:12px;
+    padding:10px;
+    background:#f5f0e8;
+    border-radius:8px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
