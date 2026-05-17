@@ -1,76 +1,255 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio HUB - Meus Projetos</title>
+    <style>
+        /* --- Variáveis de Cores --- */
+        :root {
+            --cor-fundo: #ffffff;       /* Branco */
+            --cor-destaque: #f5f5dc;    /* Bege Claro (Beige) */
+            --cor-escuro: #1a1a1a;      /* Preto Suave */
+            --cor-texto: #333333;       /* Cinza Escuro para leitura */
+            --sombra: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    <title>PortfolioHUB</title>
+        /* --- Reset e Estilos Gerais --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Cabeçalho --- */
+        header {
+            background-color: var(--cor-escuro);
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+            transition: 0.3s;
+        }
+
+        /* --- Seção de Apresentação (Hero) --- */
+        .hero {
+            background-color: var(--cor-destaque);
+            padding: 4rem 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--cor-escuro);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--cor-escuro);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .btn-linkedin {
+            display: inline-block;
+            background-color: var(--cor-escuro);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn-linkedin:hover {
+            transform: scale(1.05);
+            background-color: #000;
+        }
+
+        /* --- Área Interativa de Projetos --- */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4rem 5%;
+            gap: 2rem;
+        }
+
+        .section-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--cor-escuro);
+            border-bottom: 3px solid var(--cor-destaque);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Estilo dos Cards de Projeto */
+        .card {
+            background-color: #fff;
+            border: 2px solid var(--cor-escuro);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito Hover Interativo */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 0px var(--cor-destaque); /* Sombra sólida bege */
+            background-color: #fafafa;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--cor-escuro);
+        }
+
+        .card-tags span {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: var(--cor-escuro);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        /* Diferenciação Visual */
+        .academico-header { background-color: #f9f9f9; }
+        .pessoal-header { background-color: var(--cor-destaque); }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--cor-escuro);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        footer a { color: var(--cor-destaque); }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .projects-container { flex-direction: column; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
+    <!-- Cabeçalho -->
     <header>
-        <h1>PortfolioHUB</h1>
-
-        <p>
-            Meu espaço profissional para armazenamento de projetos,
-            atividades acadêmicas e desenvolvimento pessoal.
-        </p>
-
-        <a href="#projetos">Explorar Projetos</a>
+        <div class="logo">PORTFOLIO HUB</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="sobre">
-        <h2>Sobre o Site</h2>
-
-        <p>
-            Este portfólio foi desenvolvido com o objetivo de reunir
-            projetos acadêmicos e pessoais desenvolvidos ao longo da minha
-            trajetória de estudos e aprendizado em tecnologia,
-            engenharia e contabilidade.
-        </p>
-
-        <p>
-            Aqui serão armazenados trabalhos, atividades,
-            documentações e futuros projetos profissionais.
-        </p>
+    <!-- Apresentação Principal -->
+    <section class="hero" id="inicio">
+        <h1>Bem-vindo ao meu Repositório</h1>
+        <p>Este é o espaço centralizado onde compartilho minha evolução técnica, projetos acadêmicos e desenvolvimentos pessoais. Aqui você encontra meu portfólio interativo.</p>
+        <a href="https://www.linkedin.com/in/SEU-PERFIL" target="_blank" class="btn-linkedin">Ver no LinkedIn ↗</a>
     </section>
 
-    <section id="projetos" class="projetos">
+    <!-- Área Interativa dos Projetos -->
+    <main class="projects-container" id="projetos">
+        
+        <!-- Coluna Acadêmica -->
+        <div class="section-column">
+            <h2 class="section-title">Projetos Acadêmicos</h2>
+            
+            <div class="card">
+                <h3>Sistema de Gestão Acadêmica</h3>
+                <p>Projeto desenvolvido durante a disciplina de Banco de Dados. Interface para controle de notas e faltas.</p>
+                <br>
+                <div class="card-tags">
+                    <span>SQL</span><span>Java</span><span>JavaFX</span>
+                </div>
+            </div>
 
-        <div class="card">
-            <h2>Projetos Acadêmicos</h2>
-
-            <ul>
-                <li>Banco de Dados</li>
-                <li>Fundamentos da Engenharia</li>
-                <li>Contabilidade</li>
-                <li>Documentações e Relatórios</li>
-            </ul>
+            <div class="card">
+                <h3>Algoritmos de Ordenação</h3>
+                <p>Implementação visual de algoritmos de ordenação para a disciplina de Estrutura de Dados.</p>
+                <br>
+                <div class="card-tags">
+                    <span>Python</span><span>Matplotlib</span>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Projetos Pessoais</h2>
+        <!-- Coluna Pessoal -->
+        <div class="section-column">
+            <h2 class="section-title">Projetos Pessoais</h2>
+            
+            <div class="card">
+                <h3>Meu Portfólio Web</h3>
+                <p>Desenvolvimento do site atual para hospedar meus trabalhos e integrar com o GitHub Pages.</p>
+                <br>
+                <div class="card-tags">
+                    <span>HTML5</span><span>CSS3</span><span>Git</span>
+                </div>
+            </div>
 
-            <ul>
-                <li>Portfólio Web</li>
-                <li>GitHub Pages</li>
-                <li>Projetos Front-End</li>
-                <li>Desenvolvimento Profissional</li>
-            </ul>
+            <div class="card">
+                <h3>App de Clima</h3>
+                <p>Aplicativo simples que consome API externa para mostrar a previsão do tempo da sua cidade.</p>
+                <br>
+                <div class="card-tags">
+                    <span>JavaScript</span><span>API Rest</span>
+                </div>
+            </div>
         </div>
 
-    </section>
+    </main>
 
-    <footer>
-        <p>
-            Desenvolvido por Sabrina Alves da Silva
-        </p>
+    <!-- Rodapé -->
+    <footer id="contato">
+        <p>&copy; 2026 - Portfolio HUB. Todos os direitos reservados.</p>
+        <p><a href="https://github.com/SEU-USER">GitHub</a> | <a href="https://linkedin.com/in/SEU-PERFIL">LinkedIn</a></p>
     </footer>
 
 </body>
-
 </html>
